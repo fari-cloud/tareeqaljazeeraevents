@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tareeq aljazeera events services | Premium Event Management Dubai</title>
+    <!-- Font Awesome Link for Official WhatsApp Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #bfa15f;
+            --dark: #121212;
+            --light: #f9f9f9;
+            --gray: #2d2d2d;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --whatsapp-green: #25D366;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: lowercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Official WhatsApp Button Styling */
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Floating WhatsApp Icon */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-card ul li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .package-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-badge {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .package-card h3 {
+            margin: 15px 0;
+            color: var(--dark);
+        }
+
+        .package-features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: var(--text-light);
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #b0b0b0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .footer-whatsapp-link {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 8px;
+            color: var(--whatsapp-green) !important;
+            font-weight: bold;
+        }
+
+        .footer-whatsapp-link:hover {
+            color: #128C7E !important;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid var(--gray);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Official WhatsApp Icon -->
+    <a href="https://wa.me/971559047471" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">tareeq aljazeera events services</a>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Managing & Organizing Premium Events Across Dubai</h1>
+            <p>From high-end corporate exhibitions and luxury weddings to elite milestone celebrations, we engineer flawless production and structural design tailored to your vision.</p>
+            <a href="https://wa.me/971559047471" class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Book via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Specialized Event Management Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>👑 Wedding Ceremony Services</h3>
+                <ul>
+                    <li>Altar & Arch Engineering</li>
+                    <li>Premium VVIP Aisle Runners</li>
+                    <li>Ceremonial Seating Frameworks</li>
+                    <li>Ambient Entrance Production</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>💍 Luxury Weddings & Engagement</h3>
+                <ul>
+                    <li>Grand Stage Architecture</li>
+                    <li>Bespoke Walkways & Catwalks</li>
+                    <li>Premium Illuminations</li>
+                    <li>Masterful Floral Artistry</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🎉 Home, Celebrations & Graduation</h3>
+                <ul>
+                    <li>Custom Birthday Backdrops</li>
+                    <li>Thematic Balloon Structures</li>
+                    <li>Graduation Staging Solutions</li>
+                    <li>Acoustic & Seating Frameworks</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>💼 Corporate Galas & Exhibitions</h3>
+                <ul>
+                    <li>Custom Exhibition Stand Builds</li>
+                    <li>Gala Dinner & Award Stages</li>
+                    <li>Corporate Shell Scheme Upgrades</li>
+                    <li>Enterprise AV Infrastructure</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="section">
+        <h2 class="section-title">Strategic Event Execution Solutions</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <span class="package-badge">Milestone Special</span>
+                <h3>Private & Ceremony Layouts</h3>
+                <ul class="package-features">
+                    <li>Custom Premium Backdrop Structure</li>
+                    <li>Thematic Balloon Layout Configuration</li>
+                    <li>Full Cake Table Array & Styling</li>
+                    <li>Official Institutional Podium & Stage Build</li>
+                    <li>Standard PA Audio Infrastructure System</li>
+                </ul>
+                <a href="mailto:tajevents25@gmail.com" class="btn">Request Custom Proposal</a>
+            </div>
+            <div class="package-card">
+                <span class="package-badge">Most Popular</span>
+                <h3>Birthday Event Layouts</h3>
+                <ul class="package-features">
+                    <li>Custom Premium Birthday Backdrop Wall</li>
+                    <li>Thematic Organic Balloon Structures</li>
+                    <li>Full Cake Table Array & Creative Styling</li>
+                    <li>Ambient Spotlight Illumination Configurations</li>
+                    <li>Standard PA Sound Infrastructure System</li>
+                </ul>
+                <a href="https://wa.me/971559047471" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Book Birthday Setup
+                </a>
+            </div>
+            <div class="package-card">
+                <h3>Corporate & Exhibition Layouts</h3>
+                <ul class="package-features">
+                    <li>Turnkey Custom Stand/Shell Upgrade Build</li>
+                    <li>Bespoke Gala Award Presentation Stage</li>
+                    <li>Enterprise-Grade AV Audio-Visual Setup</li>
+                    <li>Dedicated Project Delivery Manager</li>
+                    <li>Full Transport, Logistics & Municipal Approvals</li>
+                </ul>
+                <a href="mailto:tajevents25@gmail.com" class="btn">Schedule Corporate Briefing</a>
+            </div>
+            <div class="package-card">
+                <h3>Luxury Elite Experiences</h3>
+                <ul class="package-features">
+                    <li>Bespoke Grand Wedding Architectural Stage</li>
+                    <li>Gloss Acrylic / Reinforced Glass Catwalk Walkway</li>
+                    <li>Premium Ambient Wash & Structural Spotlights</li>
+                    <li>High-Density Professional Floral Installations</li>
+                    <li>Comprehensive VVIP Floral Table Styling Layouts</li>
+                </ul>
+                <a href="https://wa.me/971559047471" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Book Design Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>tareeq aljazeera events services</h4>
+                <p>Your premier partner for professional event planning, structural engineering, and corporate layout logistics across the United Arab Emirates.</p>
+                <p>Available 24/7 to discuss upcoming multi-scale activations, school requirements, or venue walk-throughs in the UAE.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#services">Services</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Official Coordinates</h4>
+                <p>📍 Oud Metha, Dubai, UAE</p>
+                <p>📞 +971 55 904 7471</p>
+                <a href="https://wa.me/971559047471" class="footer-whatsapp-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <p>✉ tajevents25@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 tareeq aljazeera events services. All Rights Reserved. Managed & Organized in Dubai, UAE.
+        </div>
+    </footer>
+
+</body>
+</html>
